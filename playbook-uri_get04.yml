@@ -1,0 +1,20 @@
+---
+- name: using ansible to send an http get
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: send http get to requestbin.com
+      ansible.builtin.uri:
+        url: "{{ urltolookup }}?name=student&policy=bronze&storage_type=flash"
+        method: PUT
+        headers:
+          Content-Type: application/json
+          Storage-auth-token: abcdefg717
+        body_format: json
+        body:
+          name: student
+          policy: bronze
+          storage_type: flash
+      register: results
