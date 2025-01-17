@@ -1,0 +1,14 @@
+---
+- name: introducing the assert module
+  hosts: planetexpress
+  connection: ansible.builtin.ssh
+  gather_facts: true
+
+  tasks:
+    - name: display all facts that were gathered
+      ansible.builtin.debug:
+        var: ansible_facts
+
+    - name: assert that the targets are using the correct BIOS
+      ansible.builtin.assert:
+        that: ansible_facts.bios_vendor == "SeaBIOS"

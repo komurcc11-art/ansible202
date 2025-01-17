@@ -1,0 +1,12 @@
+---
+- name: assert os distribution
+  hosts: planetexpress
+  connection: ansible.builtin.ssh
+  gather_facts: true
+
+  tasks:
+    - name: assert that the targets have a desired ansible distribution value
+      ansible.builtin.assert:
+        that: ansible_distribution == "Ubuntu"
+        fail_msg: " This machine doesn't have ubuntu"
+        success_msg: "This machine has ubuntu"

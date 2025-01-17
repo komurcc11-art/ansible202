@@ -1,0 +1,11 @@
+---
+- name: a playbok tht runs gather_facts
+  hosts: planetexpress
+  connection: ssh
+  gather_facts: true
+
+  tasks:
+    
+    - name: display all facts
+      ansible.builtin.debug:
+        var: ansible_facts
