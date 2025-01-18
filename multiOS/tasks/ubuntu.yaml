@@ -1,0 +1,6 @@
+---
+- name: perform an apt operation (ubuntu sues the apt package installer)
+  ansible.builtin.apt:
+    name: sl
+    state: present
+  become: yes

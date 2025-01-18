@@ -1,0 +1,6 @@
+---
+- name: assert the distribution version matched
+  ansible.builtin.assert:
+    that: ansible_facts.distribution_version == "22.04"
+    fail_msg: "distribution verison is  {{ansible_facts.distribution}}"
+    success_msg: "distribution version is 22.04"

@@ -1,0 +1,6 @@
+---
+- name: assert that the targets are using the correct kernel
+  ansible.builtin.assert:
+    that: ansible_facts.kernel >= "5.15.0-130-generic"
+    fail_msg: "Kernel appears incorrect: {{ ansible_facts.kernel }}"
+    success_msg: "kernel correct: {{ ansible_facts.kernel }}"

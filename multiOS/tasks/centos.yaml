@@ -1,0 +1,6 @@
+---
+- name: perform a yum operation
+  ansible.builtin.yum:
+    name: sl
+    state: present
+  become: yes

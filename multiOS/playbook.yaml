@@ -1,0 +1,27 @@
+---
+- name: playbook that cleanly executes blocked tasks per OS
+  hosts: planetexpress:windows
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+
+    - name: prechecks (linux general)
+      ansible.builtin.import_tasks: tasks/prechecks_all_distros.yaml
+      when: ansible_facts['os_family'] != "Windows"
+
+    - name: precheck (ubuntu only)
+      ansible.builtin.import_tasks:  tasks/prechecks_ubuntu.yaml
+      when: ansible_facts['distribution'] == "Ubuntu"
+
+    - name: tasks specific to ubuntu
+      ansible.builtin.import_tasks: tasks/ubuntu.yaml
+      when: ansible_facts['distribution'] == "Ubuntu"
+
+    - name: tasks specific to centos
+      ansible.builtin.import_tasks: tasks/centos.yaml
+      when: ansible_facts['distribution'] == "CentOS"
+
+    - name: tasks specific to windows
+      ansible.builtin.import_tasks: tasks/windows.yaml
+      when: ansible_facts['os_family'] == "Windows"
