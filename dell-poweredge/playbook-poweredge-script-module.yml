@@ -1,0 +1,15 @@
+---
+- name: control dell poweredge via iDRAC
+  hosts: localhost
+  gather_facts: true
+
+  tasks:
+    - name: control power
+      ansible.builtin.script: GetSetPowerStateREDFISH.py --help
+      args:
+        executable: python3
+      register: result
+
+    - name: show results
+      ansible.builtin.debug:
+        var: result
