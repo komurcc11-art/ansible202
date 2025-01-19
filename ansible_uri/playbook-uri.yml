@@ -1,0 +1,16 @@
+---
+- name: playbook to show how to contact redfish
+  connection: ansible.builtin.ssh
+  hosts: localhost
+  gather_facts: true
+
+  tasks:
+    - name: get info about services
+      ansible.builtin.uri:
+        url: http://127.0.0.1:2224/redfish/v1/Systems/437XR1138R2/Bios
+        method: GET
+      register: result
+
+    - name: display result
+      ansible.builtin.debug:
+        var: result
