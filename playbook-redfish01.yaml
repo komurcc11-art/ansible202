@@ -1,6 +1,6 @@
 ---
 - name: a playbook to demo automating against RedFish APIs using community.general collection
-  hosts: redfish
+  hosts: redfish_apis
   connection: local
   gather_facts: true
 
@@ -20,4 +20,9 @@
 
     - name: display the _info we just collectted
       ansible.builtin.debug:
-        msg: "{{ result.redfish_facts.cpu.entries }}"
+        msg: "{{ result.redfish_facts.cpu.entries | to_nice_json }}"
+
+    - name: writhe the results
+      ansible.builtin.copy:
+        content: "{{ result.redfish_facts.cpu.entries | to_nice_json }}"
+        dest: outputfile.json

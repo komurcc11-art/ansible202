@@ -1,1 +1,41 @@
-[[{"system_uri": "/redfish/v1/Systems/437XR1138R2"}, [{"Id": "CPU1", "Name": "Processor", "Manufacturer": "Intel(R) Corporation", "Model": "Multi-Core Intel(R) Xeon(R) processor 7xxx Series", "MaxSpeedMHz": 3700, "ProcessorArchitecture": "x86", "TotalCores": 8, "TotalThreads": 16, "Status": {"Health": "OK", "State": "Enabled"}}, {"Id": "CPU2", "Name": "Processor", "Status": {"State": "Absent"}}, {"Id": "FPGA1", "Name": "FPGA", "Manufacturer": "Intel(R) Corporation", "Model": "Stratix 10", "ProcessorArchitecture": "OEM", "Status": {"Health": "OK", "State": "Enabled"}}]]]
+[
+    [
+        {
+            "system_uri": "/redfish/v1/Systems/437XR1138R2"
+        },
+        [
+            {
+                "Id": "CPU1",
+                "Manufacturer": "Intel(R) Corporation",
+                "MaxSpeedMHz": 3700,
+                "Model": "Multi-Core Intel(R) Xeon(R) processor 7xxx Series",
+                "Name": "Processor",
+                "ProcessorArchitecture": "x86",
+                "Status": {
+                    "Health": "OK",
+                    "State": "Enabled"
+                },
+                "TotalCores": 8,
+                "TotalThreads": 16
+            },
+            {
+                "Id": "CPU2",
+                "Name": "Processor",
+                "Status": {
+                    "State": "Absent"
+                }
+            },
+            {
+                "Id": "FPGA1",
+                "Manufacturer": "Intel(R) Corporation",
+                "Model": "Stratix 10",
+                "Name": "FPGA",
+                "ProcessorArchitecture": "OEM",
+                "Status": {
+                    "Health": "OK",
+                    "State": "Enabled"
+                }
+            }
+        ]
+    ]
+]

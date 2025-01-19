@@ -1,0 +1,22 @@
+---
+- name: a playbook to demo automating agains redfish apis 
+  hosts: redfish_apis
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: set bootmode to uefi
+      community.general.redfish_config:
+        category: Systems
+        command: SetBiosAttributes
+        bios_attributes:
+          BootMode: "UEFI"
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+
+      register: results
+
+    - name: show results
+      ansible.builtin.debug:
+        var: results

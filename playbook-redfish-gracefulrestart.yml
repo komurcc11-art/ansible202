@@ -1,0 +1,21 @@
+---
+- name: a playbook to demo automating agains redfish apis 
+  hosts: redfish_apis
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: graceful restart
+      community.general.redfish_command:
+        category: Systems
+        command: PowerGracefulRestart
+        resource_id: 437XR1138R2 
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+
+      register: results
+
+    - name: show results
+      ansible.builtin.debug:
+        var: results
