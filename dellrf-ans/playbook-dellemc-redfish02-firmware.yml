@@ -1,0 +1,44 @@
+---
+- hosts: redfish_apis
+  connection: local
+  gather_facts: false
+  name: "Ansible Module for Simple Firmware Update"
+
+  collections:
+    - dellemc.openmanage
+
+  tasks:
+
+    - name: get default inventory information
+      community.general.redfish_info:
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+      register: results
+
+    - name: display the gathered facts
+      ansible.builtin.debug:
+        var: results
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+---
+- name: a playbook testing redfish command module
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    baseuri: 10.0.0.89
+    username: root
+    password: r0gerwilc0
+
+
+  collections:
+    - community.general
+
+  tasks:
+    - name: create session
+      community.general.redfish_command:
+        category: Sessions
+        command: CreateSession
+        resource_id: BMC
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+      register: result
+
+    - name: show results
+      ansible.builtin.debug:
+        var: result
+
+    - name: reflect on session and token information
+      pause:
+
+    - name: get info using a token not a passowrd and username
+      community.general.redfish_info:
+        baseuri: "{{ baseuri }}"
+        auth_token: "{{ result.session.token }}"
+      register: results
+
+    - name: show retrieved info
+      ansible.builtin.debug:
+        var: result
+
+    - name: set chassis indicator led to bling using security token
+      community.general.redfish_command:
+        category: Chassis
+        command: IndicatorLedBlink
+        resource_id: SystemEmbedded.1
+        baseuri: "{{ baseuri }}"
+        auth_token: "{{ result.session.token }}"
+
+
+    - name: appreciate that the light is now blinking in the alta3 datacenter
+      pause:
+
+    - name: trash the token, we are done with it
+      community.general.redfish_command:
+        category: Sessions
+        command: DeleteSession
+        baseuri: "{{ baseuri }}"
+        auth_token: "{{ result.session.token }}"
+        session_uri: "{{ result.session.uri }}"
+    

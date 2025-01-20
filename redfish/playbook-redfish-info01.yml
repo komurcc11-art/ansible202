@@ -1,0 +1,23 @@
+---
+- name: use redfish to gather cpu inventory and virtual media information
+  hosts: redfish
+  connection: local
+  gather_facts: false
+
+  collections:
+    - community.general
+
+  tasks:
+
+    - name: get cpu inventory
+      community.general.redfish_info:
+        category: Systems
+        command: GetCpuInventory
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+      register: cpuInv
+
+    - name: display cpu data
+      ansible.builtin.debug:
+        var: cpuInv

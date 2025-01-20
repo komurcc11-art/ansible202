@@ -1,0 +1,36 @@
+---
+- name: a playbook to demo automating against RedFish APIs using community.general collection
+  hosts: redfish
+  connection: local
+  gather_facts: true
+
+  collections:
+    - community.general
+
+
+  tasks:
+    - name: get CPU inventory
+      community.general.redfish_info:
+        category: Systems
+        command: GetCpuInventory
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+      register: result
+
+    - name: display the _info we just collectted
+      ansible.builtin.debug:
+        msg: "{{ result.redfish_facts.cpu.entries }}"
+
+    - name: write the invo we collected to a file
+      ansible.builtin.copy:
+        content: "{{ result.redfish_facts.cpu.entries }}"
+        dest: outputfile.json
+
+    - name: restart system power gracefully
+      community.general.redfish_command:
+        category: Systems
+        command: PowerGracefulRestart
+        baseuri: "{{ baseuri }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
