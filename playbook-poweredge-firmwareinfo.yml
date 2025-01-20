@@ -1,0 +1,41 @@
+---
+- name: get installed firmware inventory
+  connection: local
+  hosts: localhost
+  gather_facts: false
+
+  collections:
+    - dellemc.openmanage
+
+  vars:
+    idrac_ip: 10.0.0.89
+    idrac_user: root
+    idrac_password: r0gerwilc0
+
+  tasks:
+
+    # prechecks
+
+
+    - name: get installed firmware inventory
+      idrac_firmware_info:
+        idrac_ip: "{{ idrac_ip }}"
+        idrac_user: "{{ idrac_user }}"
+        idrac_password: "{{ idrac_password }}"
+        validate_certs: false
+      register: results
+
+    - name: show results
+      ansible.builtin.debug:
+        var: results
+
+    - name: display just the results.firmware_info
+      ansible.builtin.debug:
+        var: item.ElementName
+      loop: "{{ results.firmware_info.Firmware }}"
+
+    - name: some checks
+      ansible.builtin.assert:
+        that: results.firmware_info.Firmware.FQDD == "PSU.Slot.1"
+        success_msg: correct fqdd
+        fail_msg: incorrect fqdd
