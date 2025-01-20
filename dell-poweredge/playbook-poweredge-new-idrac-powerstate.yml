@@ -1,0 +1,22 @@
+---
+- name: turn on the poweredge
+  hosts: idrac
+  connection: local
+  gather_facts: false
+
+  vars:
+   - idrac_ip: 10.0.0.89
+   - idrac_user: root
+   - idrac_pw: r0gerwilc0
+   - reset_tp: "On"
+
+
+  tasks:
+
+    - name: powerup poweredge
+      dellemc.openmanage.redfish_powerstate:
+        baseuri: "{{ idrac_ip }}"
+        password: "{{ idrac_pw }}"
+        reset_type: "{{ reset_tp }}"
+        username: "{{ idrac_user }}"
+

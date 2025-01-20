@@ -1,0 +1,29 @@
+---
+- name: dellemc poweredge
+  hosts: poweredge_west
+  connection: local
+  gather_facts: no
+
+
+  vars:
+    
+    idrac_ip: "{{ ip }}"
+    idrac_user: "{{ user }}"
+    idrac_password: "{{ pw }}"
+
+
+  tasks:
+
+    - name: poll idrac lifecycle status
+      dellemc.openmanage.idrac_lifecycle_controller_status_info:
+        validate_certs: False
+        idrac_ip: "{{ idrac_ip }}"
+        idrac_user: "{{ idrac_user }}"
+        idrac_password: "{{ idrac_password }}"
+      register:
+        results
+
+    - name: show results
+      ansible.builtin.debug:
+        var: results
+
