@@ -1,0 +1,18 @@
+---
+- name: connect directly to an esxi host and collect facts
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: provide information about a standalone esxi server
+      community.vmware.vmware_about_info:
+        validate_certs: false
+        hostname: 10.0.0.90
+        username: root
+        password: calvin23!
+      register: results
+
+    - name: display results
+      ansible.builtin.debug:
+        var: results

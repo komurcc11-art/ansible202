@@ -1,0 +1,19 @@
+---
+- name: investigate vswitch configuration on an esxi host
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: gather vswitch info about a single esxi host
+      community.vmware.vmware_vswitch_info:
+        validate_certs: false
+        hostname: 10.0.0.90
+        username: root
+        password: calvin23!
+        exsi_hostmane: 10.0.0.90
+      register: all_vswitch_info
+
+    - name: display results
+      ansible.builtin.debug:
+        var: all_vswitch_info

@@ -1,0 +1,27 @@
+---
+- name: connecto to vmware vcenter to get info on th enrolled hosts
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars: 
+
+    vch: 10.0.0.91
+    vcu: "administrator@vsphere.local"
+    vcp: Calvin23!
+
+  collections:
+    - vmware.wmware_rest
+
+  tasks:
+    - name: get a list of the hosts
+      vmware.vmware_rest.vcenter_host_info:
+        vcenter_validate_certs: false
+        vcenter_hostname: "{{ vch }}"
+        vcenter_username: "{{ vcu }}"
+        vcenter_password: "{{ vcp }}"
+      register: my_hosts
+
+    - name: show the facts that were gathered
+      ansible.builtin.debug:
+        var: my_hosts
