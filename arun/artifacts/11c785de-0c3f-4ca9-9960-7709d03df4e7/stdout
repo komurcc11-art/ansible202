@@ -1,0 +1,8 @@
+
+PLAY [simple playbook for sl] **************************************************
+
+TASK [install sl] **************************************************************
+[0;32mok: [localhost][0m
+
+PLAY RECAP *********************************************************************
+[0;32mlocalhost[0m                  : [0;32mok=1   [0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

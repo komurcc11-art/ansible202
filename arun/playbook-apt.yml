@@ -1,0 +1,12 @@
+---
+- name: simple playbook for sl
+  connection: local
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: install sl
+      ansible.builtin.apt:
+        name: sl
+        state: present
+      become: true

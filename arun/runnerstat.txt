@@ -1,0 +1,28 @@
+****** PLAYBOOK RUN BREAKDOWN ******
+
+{'skipped': {}, 'ok': {'localhost': 1}, 'dark': {}, 'failures': {}, 'ignored': {}, 'rescued': {}, 'processed': {'localhost': 1}, 'changed': {}}
+
+EVENT:  playbook_on_start
+TASK:  None
+UUID:  eafdbe3a-300a-4f73-a656-2326f52e96f4
+
+EVENT:  playbook_on_play_start
+TASK:  None
+UUID:  cd26d93b-73ec-11c7-0e80-000000000010
+
+EVENT:  playbook_on_task_start
+TASK:  install sl
+UUID:  cd26d93b-73ec-11c7-0e80-000000000012
+
+EVENT:  runner_on_start
+TASK:  install sl
+UUID:  45a2b0e9-a732-4302-b199-bbf0e942e5e1
+
+EVENT:  runner_on_ok
+TASK:  install sl
+UUID:  d72f05ef-c3eb-4a14-81e9-7a0b6e814756
+
+EVENT:  playbook_on_stats
+TASK:  None
+UUID:  292bf155-f962-4210-87f2-733412d89ba9
+
