@@ -1,0 +1,10 @@
+plugin: community.vmware.vmware_host_inventory
+strict: True
+hostname: 10.0.0.91
+username: administrator@vsphere.local
+password: "Calvin23!"
+validate_certs: False
+properties: 
+  - name
+  - summary.runtime.powerState
+  - config.lockdownMode
