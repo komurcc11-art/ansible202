@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "60cb1a5a-612a-4007-ac30-241ef9238b54", "counter": 7, "stdout": "\u001b[1;35m[idrac] idrac-host1 idrac_ip=10.0.0.89 idrac_user=root\u001b[0m", "start_line": 6, "end_line": 7, "runner_ident": "inventory/hosts", "created": "2025-01-23T01:14:17.173213+00:00"}

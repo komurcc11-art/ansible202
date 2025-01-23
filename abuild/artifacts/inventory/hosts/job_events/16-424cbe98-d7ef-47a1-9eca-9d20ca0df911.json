@@ -1,0 +1,1 @@
+{"uuid": "424cbe98-d7ef-47a1-9eca-9d20ca0df911", "counter": 16, "stdout": "", "start_line": 15, "end_line": 15, "runner_ident": "inventory/hosts", "event": "playbook_on_start", "pid": 15, "created": "2025-01-23T01:14:40.722974+00:00", "event_data": {"playbook": "test.yml", "playbook_uuid": "424cbe98-d7ef-47a1-9eca-9d20ca0df911", "uuid": "424cbe98-d7ef-47a1-9eca-9d20ca0df911"}}

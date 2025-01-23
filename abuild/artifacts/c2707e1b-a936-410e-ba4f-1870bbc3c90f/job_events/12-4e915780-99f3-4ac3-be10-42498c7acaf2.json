@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "4e915780-99f3-4ac3-be10-42498c7acaf2", "counter": 12, "stdout": "\u001b[1;35m[WARNING]: Unable to parse /runner/inventory as an inventory source\u001b[0m", "start_line": 11, "end_line": 12, "runner_ident": "c2707e1b-a936-410e-ba4f-1870bbc3c90f", "created": "2025-01-23T01:15:04.406251+00:00"}

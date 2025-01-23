@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "bc5db084-a19d-4817-a25e-b2e8b6024a4f", "counter": 1, "stdout": "\u001b[1;35m[WARNING]:  * Failed to parse /runner/inventory/hosts with yaml plugin: We were\u001b[0m", "start_line": 0, "end_line": 1, "runner_ident": "1e76e743-dd10-4301-88b5-0522b1b377d8", "created": "2025-01-23T01:16:24.093502+00:00"}

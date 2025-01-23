@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "d98dc9d8-897a-433b-bab9-6d851aee78b7", "counter": 9, "stdout": "\u001b[1;35m[WARNING]:  * Failed to parse /runner/inventory/hosts with ini plugin: Invalid\u001b[0m", "start_line": 8, "end_line": 9, "runner_ident": "694ba83b-5d8a-478c-9484-eb749109bbb0", "created": "2025-01-23T01:13:10.461203+00:00"}

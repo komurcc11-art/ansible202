@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "0ce83302-79c0-4158-a0f7-51e9b6b144d5", "counter": 1, "stdout": "Unable to find image 'builder_image_alpha:latest' locally", "start_line": 0, "end_line": 1, "runner_ident": "281ff6e8-9e0c-410d-95ff-6c320b13278f", "created": "2025-01-23T01:15:30.841275+00:00"}

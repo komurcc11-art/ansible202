@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "6b95a7c9-5942-4509-a40f-2726cf1eacdc", "counter": 3, "stdout": "See 'docker run --help'.", "start_line": 2, "end_line": 3, "runner_ident": "281ff6e8-9e0c-410d-95ff-6c320b13278f", "created": "2025-01-23T01:15:31.484104+00:00"}

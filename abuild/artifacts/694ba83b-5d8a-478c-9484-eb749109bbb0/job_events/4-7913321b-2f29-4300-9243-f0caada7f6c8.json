@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "7913321b-2f29-4300-9243-f0caada7f6c8", "counter": 4, "stdout": "\u001b[1;35mYAML.   did not find expected <document start>  The error appears to be in\u001b[0m", "start_line": 3, "end_line": 4, "runner_ident": "694ba83b-5d8a-478c-9484-eb749109bbb0", "created": "2025-01-23T01:13:10.458860+00:00"}

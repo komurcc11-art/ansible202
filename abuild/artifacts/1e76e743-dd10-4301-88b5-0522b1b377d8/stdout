@@ -1,0 +1,21 @@
+[1;35m[WARNING]:  * Failed to parse /runner/inventory/hosts with yaml plugin: We were[0m
+[1;35munable to read either as JSON nor YAML, these are the errors we got from each:[0m
+[1;35mJSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading[0m
+[1;35mYAML.   did not find expected <document start>  The error appears to be in[0m
+[1;35m'/runner/inventory/hosts': line 3, column 1, but may be elsewhere in the file[0m
+[1;35mdepending on the exact syntax problem.  The offending line appears to be:[0m
+[1;35m[idrac] idrac-host1 idrac_ip=10.0.0.89 idrac_user=root[0m
+[1;35midrac_password=r0gerwilc0 ^ here[0m
+[1;35m[WARNING]:  * Failed to parse /runner/inventory/hosts with ini plugin: Invalid[0m
+[1;35mhost pattern '---' supplied, '---' is normally a sign this is a YAML file.[0m
+[1;35m[WARNING]: Unable to parse /runner/inventory/hosts as an inventory source[0m
+[1;35m[WARNING]: Unable to parse /runner/inventory as an inventory source[0m
+[1;35m[WARNING]: No inventory was parsed, only implicit localhost is available[0m
+[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that[0m
+[1;35mthe implicit localhost does not match 'all'[0m
+[1;35m[WARNING]: Could not match supplied host pattern, ignoring: idrac[0m
+
+PLAY [run this in check mode] **************************************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY RECAP *********************************************************************
