@@ -1,0 +1,13 @@
+---
+- name: testing my new module
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: is the earth at rist of a neo event
+      nasa_neow:
+        startdate: 2020-06-15
+        enddate: 2020-06-17
+        apikey: DEMO_KEY
+        savepath: /home/student/ansible202/
